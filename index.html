@@ -1,84 +1,27 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diplomatic Path</title>
-  <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f7fb; color: #172033; }
-    header { padding: 32px 20px; background: #172033; color: white; }
-    .wrap { max-width: 1100px; margin: auto; }
-    h1 { margin: 0 0 8px; font-size: 32px; }
-    .subtitle { margin: 0; opacity: .8; }
-    main { padding: 24px 20px 50px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
-    .card { background: white; border-radius: 18px; padding: 20px; box-shadow: 0 6px 20px rgba(23,32,51,.07); }
-    .card h2 { margin-top: 0; font-size: 20px; }
-    .language { border-top: 4px solid #172033; }
-    .progress { height: 9px; background: #e8ebf2; border-radius: 99px; overflow: hidden; margin: 12px 0 6px; }
-    .bar { height: 100%; background: #172033; width: 0; }
-    .news { margin-top: 16px; }
-    .news-item { padding: 12px 0; border-bottom: 1px solid #edf0f5; }
-    .news-item:last-child { border-bottom: 0; }
-    .tag { display: inline-block; font-size: 12px; background: #eef1f7; padding: 5px 9px; border-radius: 99px; margin-bottom: 8px; }
-    .tasks { margin-top: 16px; }
-    .task { display: flex; gap: 10px; align-items: center; padding: 10px 0; }
-    footer { text-align: center; padding: 25px; color: #687287; font-size: 14px; }
-  </style>
-</head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Diplomatic Path</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f5f7fb;color:#172033}header{padding:32px 20px;background:#172033;color:white}.wrap{max-width:1100px;margin:auto}h1{margin:0 0 8px;font-size:32px}.subtitle{margin:0;opacity:.8}main{padding:24px 20px 50px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.card{background:white;border-radius:18px;padding:20px;box-shadow:0 6px 20px rgba(23,32,51,.07)}.card h2{margin-top:0;font-size:20px}.language{border-top:4px solid #172033;cursor:pointer;transition:.2s}.language:hover{transform:translateY(-2px)}.progress{height:9px;background:#e8ebf2;border-radius:99px;overflow:hidden;margin:12px 0 6px}.bar{height:100%;background:#172033;transition:width .3s}.news{margin-top:16px}.news-item{padding:12px 0;border-bottom:1px solid #edf0f5}.news-item:last-child{border-bottom:0}.tag{display:inline-block;font-size:12px;background:#eef1f7;padding:5px 9px;border-radius:99px;margin-bottom:8px}.tasks{margin-top:16px}.task{display:flex;gap:10px;align-items:center;padding:10px 0}.task input{width:18px;height:18px}button{border:0;border-radius:12px;padding:10px 14px;background:#172033;color:#fff;cursor:pointer;margin-top:10px}#status{margin-top:12px;font-weight:600}footer{text-align:center;padding:25px;color:#687287;font-size:14px}.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);padding:20px;align-items:center;justify-content:center}.modal.open{display:flex}.modal-box{background:#fff;border-radius:20px;padding:24px;max-width:500px;width:100%}.close{float:left;background:#e9edf4;color:#172033}
+</style></head>
 <body>
-  <header>
-    <div class="wrap">
-      <h1>🌍 Diplomatic Path</h1>
-      <p class="subtitle">منصة تطوير اللغات والثقافة السياسية والدولية</p>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section class="grid">
-      <article class="card language">
-        <h2>🇬🇧 English</h2>
-        <p>الإنجليزية — المستوى A1</p>
-        <div class="progress"><div class="bar" style="width: 10%"></div></div>
-        <strong>10%</strong>
-      </article>
-      <article class="card language">
-        <h2>🇫🇷 French</h2>
-        <p>الفرنسية — المستوى A1</p>
-        <div class="progress"><div class="bar" style="width: 10%"></div></div>
-        <strong>10%</strong>
-      </article>
-      <article class="card language">
-        <h2>🇪🇸 Spanish</h2>
-        <p>الإسبانية — المستوى A1</p>
-        <div class="progress"><div class="bar" style="width: 5%"></div></div>
-        <strong>5%</strong>
-      </article>
-    </section>
-
-    <section class="card tasks">
-      <h2>🎯 مهام اليوم</h2>
-      <label class="task"><input type="checkbox"> 20 دقيقة إنجليزية</label>
-      <label class="task"><input type="checkbox"> 20 دقيقة فرنسية</label>
-      <label class="task"><input type="checkbox"> 15 دقيقة إسبانية</label>
-      <label class="task"><input type="checkbox"> قراءة خبر دولي</label>
-      <label class="task"><input type="checkbox"> مراجعة مصطلحات سياسية</label>
-    </section>
-
-    <section class="card news">
-      <h2>📰 الأخبار اليومية</h2>
-      <div class="news-item"><span class="tag">سيُضاف لاحقًا</span><br>هنا ستظهر أهم الأخبار الدولية والسياسية اليومية مع المصدر والتاريخ.</div>
-      <div class="news-item"><span class="tag">تعلم من الخبر</span><br>سنربط الأخبار بمفردات ومصطلحات بالإنجليزية والفرنسية والإسبانية.</div>
-    </section>
-
-    <section class="grid" style="margin-top:16px">
-      <article class="card"><h2>🏛️ المعرفة السياسية</h2><p>السياسة، العلاقات الدولية، الجغرافيا السياسية، الدبلوماسية، والدفاع والأمن.</p></article>
-      <article class="card"><h2>🗣️ المحاكاة</h2><p>تدريب تدريجي على النقاشات السياسية والمواقف الدبلوماسية بثلاث لغات.</p></article>
-      <article class="card"><h2>📊 التقدم</h2><p>متابعة اللغة، المفردات، الاختبارات، الالتزام اليومي، ونقاط الخبرة.</p></article>
-    </section>
-  </main>
-
-  <footer>Diplomatic Path — الإصدار الأول</footer>
-</body>
-</html>
+<header><div class="wrap"><h1>🌍 Diplomatic Path</h1><p class="subtitle">منصة تطوير اللغات والثقافة السياسية والدولية</p></div></header>
+<main class="wrap">
+<section class="grid">
+<article class="card language" data-language="English"><h2>🇬🇧 English</h2><p>الإنجليزية — المستوى A1</p><div class="progress"><div class="bar" style="width:10%"></div></div><strong>10%</strong></article>
+<article class="card language" data-language="French"><h2>🇫🇷 French</h2><p>الفرنسية — المستوى A1</p><div class="progress"><div class="bar" style="width:10%"></div></div><strong>10%</strong></article>
+<article class="card language" data-language="Spanish"><h2>🇪🇸 Spanish</h2><p>الإسبانية — المستوى A1</p><div class="progress"><div class="bar" style="width:5%"></div></div><strong>5%</strong></article>
+</section>
+<section class="card tasks"><h2>🎯 مهام اليوم</h2>
+<label class="task"><input type="checkbox">20 دقيقة إنجليزية</label><label class="task"><input type="checkbox">20 دقيقة فرنسية</label><label class="task"><input type="checkbox">15 دقيقة إسبانية</label><label class="task"><input type="checkbox">قراءة خبر دولي</label><label class="task"><input type="checkbox">مراجعة مصطلحات سياسية</label><div id="status">إنجاز اليوم: 0%</div></section>
+<section class="card news"><h2>📰 الأخبار اليومية</h2><div class="news-item"><span class="tag">سيُضاف لاحقًا</span><br>هنا ستظهر أهم الأخبار الدولية والسياسية اليومية مع المصدر والتاريخ.</div><div class="news-item"><span class="tag">تعلم من الخبر</span><br>سنربط الأخبار بمفردات ومصطلحات بالإنجليزية والفرنسية والإسبانية.</div></section>
+<section class="grid" style="margin-top:16px"><article class="card"><h2>🏛️ المعرفة السياسية</h2><p>السياسة، العلاقات الدولية، الجغرافيا السياسية، الدبلوماسية، والدفاع والأمن.</p></article><article class="card"><h2>🗣️ المحاكاة</h2><p>تدريب تدريجي على النقاشات السياسية والمواقف الدبلوماسية بثلاث لغات.</p></article><article class="card"><h2>📊 التقدم</h2><p>متابعة اللغة، المفردات، الاختبارات، الالتزام اليومي، ونقاط الخبرة.</p></article></section>
+</main><footer>Diplomatic Path — الإصدار الأول</footer>
+<div class="modal" id="modal"><div class="modal-box"><button class="close" onclick="closeModal()">إغلاق</button><h2 id="modalTitle"></h2><p>سنضع هنا دروس ومفردات واختبارات المستوى A1 لهذه اللغة.</p><p><strong>قريبًا:</strong> قراءة، استماع، كتابة، محادثة، ومصطلحات سياسية.</p></div></div>
+<script>
+const tasks=[...document.querySelectorAll('.task input')],status=document.getElementById('status');
+function updateProgress(){const done=tasks.filter(x=>x.checked).length;status.textContent=`إنجاز اليوم: ${Math.round(done/tasks.length*100)}%`;localStorage.setItem('dailyTasks',JSON.stringify(tasks.map(x=>x.checked)))}
+const saved=JSON.parse(localStorage.getItem('dailyTasks')||'[]');tasks.forEach((x,i)=>{x.checked=!!saved[i];x.addEventListener('change',updateProgress)});updateProgress();
+const modal=document.getElementById('modal'),title=document.getElementById('modalTitle');document.querySelectorAll('.language').forEach(card=>card.addEventListener('click',()=>{title.textContent=`${card.dataset.language} — A1`;modal.classList.add('open')}));function closeModal(){modal.classList.remove('open')}
+</script></body></html>
